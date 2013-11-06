@@ -1,0 +1,13 @@
+CREATE OR REPLACE TRIGGER "SYSMAN"."USERDETAILS_TRG" 
+before insert on "USERDETAILS"    
+for each row begin     
+if inserting then       
+if :NEW."USERID" is null then          
+select CUSTOMERS_SEQ.nextval 
+into :NEW."USERID" 
+from dual;       
+end if;    
+end if; 
+end;
+/
+ALTER TRIGGER "SYSMAN"."USERDETAILS_TRG" ENABLE;

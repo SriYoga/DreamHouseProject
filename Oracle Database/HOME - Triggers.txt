@@ -1,0 +1,14 @@
+CREATE OR REPLACE TRIGGER "SYSMAN"."HOME_TRG" 
+before insert on "HOME"    
+for each row begin     
+if inserting then       
+if :NEW."HOMEID" 
+is null then          
+select CUSTOMERS_SEQ.nextval 
+into :NEW."HOMEID" 
+from dual;       
+end if;    
+end if; 
+end;
+/
+ALTER TRIGGER "SYSMAN"."HOME_TRG" ENABLE;
