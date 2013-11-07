@@ -25,7 +25,7 @@ Sri Yoga - 300685658 - sri.yoga@hotmail.com - Scrum Master
 
 Mohammed Ekram Ullah - 300719918 - ekram787@yahoo.com - Developer
 
-Hellen Pei Wang - 300712924 - peiwang98@gmail.com - Developer
+Helen Pei Wang - 300712924 - peiwang98@gmail.com - Developer
 
 Gowtham Pinnaka - 300733643 - gowthamppd@gmail.com - Developer
 
