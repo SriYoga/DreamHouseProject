@@ -84,7 +84,38 @@ public class Login extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
-		
+		try {
+			connection = DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:1521:orcl", "sysman",
+					"sysman123");
+			Statement statement = connection.createStatement();
+			String query = "select * from UserDetails where Username=" + "'"
+					+ txtUserName.getText() + "'" + " and password=" + "'"
+					+ txtPassword.getText() + "'";
+			ResultSet resultset = statement.executeQuery(query);
+			if (resultset.next()) {
+				UserDetail user = new UserDetail();
+				user.UserID = Integer.valueOf(resultset.getString("UserID"));
+				user.UserName = resultset.getString("UserName");
+				user.FirstName = resultset.getString("FirstName");
+				user.LastName = resultset.getString("LastName");
+				user.Role = resultset.getString("Role");
+				this.setVisible(false);
+				
+				/*
+				WelcomePage home = new WelcomePage(user);				
+				home.show();
+				*/
+			} else {				
+				JOptionPane.showMessageDialog(null,
+						"Invalid username and password", "Error Message",
+						JOptionPane.WARNING_MESSAGE);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }
