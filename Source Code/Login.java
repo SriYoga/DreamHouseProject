@@ -102,10 +102,10 @@ public class Login extends JFrame implements ActionListener {
 				user.Role = resultset.getString("Role");
 				this.setVisible(false);
 				
-				/*
+				//This part has been developed by Ekram 11-Nov-2013
 				WelcomePage home = new WelcomePage(user);				
 				home.show();
-				*/
+				
 			} else {				
 				JOptionPane.showMessageDialog(null,
 						"Invalid username and password", "Error Message",
