@@ -103,6 +103,25 @@ public class SearchResult extends JFrame implements ActionListener {
 		contentPane.add(lblLocation);
 
 		//Here we can add for more buttons for other use cases
+
+//This is Ekram's Part for Edit a property(START)
+
+		JButton btnEdit = new JButton("Edit");
+		btnEdit.addActionListener(new ActionListener() 
+		{
+		public void actionPerformed(ActionEvent e) {
+		if (selectedData != "") 
+			{
+			UpdateHouse oHouse = new UpdateHouse(user, Integer.parseInt(selectedData));
+			oHouse.show();
+			} else 
+				{
+				JOptionPane.showMessageDialog(null,"Please select the item to update details","Information Message",JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
+		});
+
+//This is Ekram's Part for Edit a property(END)
 	}
 	
 	
