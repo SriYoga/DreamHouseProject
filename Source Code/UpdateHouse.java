@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -39,6 +40,7 @@ public class UpdateHouse extends JFrame implements ActionListener{
 
 	public UpdateHouse(UserDetail user, final int homeID) {
 		setTitle("Home - Update house details");
+		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 639, 490);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
@@ -143,15 +145,85 @@ public class UpdateHouse extends JFrame implements ActionListener{
 		contentPane.add(lblImage);
 
 		JButton btnUpdate = new JButton("Update");
-		btnUpdate.addActionListener(new ActionListener() 
-		{
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					connection = DriverManager.getConnection(
+							"jdbc:oracle:thin:@localhost:1521:orcl", "sysman",
+							"Ekramili6");				
+						
+						FileInputStream fin = new FileInputStream(fc
+								.getSelectedFile().getPath());	
+						PreparedStatement ps = connection
+								.prepareStatement("update home set location =" + "'" + cmbLocation.getSelectedItem().toString()+"'" + "," +
+										"type =" + "'" + cmbType.getSelectedItem().toString()+"'" + "," +
+										"sqfeet =" + "'" + txtSqFeet.getText().toString()+"'" + "," +
+										"price =" + "'" + txtPrice.getText().toString()+"'" + "," +
+										"description =" + "'" + txtDescription.getText()+"'" + "," +
+										"bedrooms =" + "'" + txtBedRooms.getText().toString()+"'" + "," +
+										"washrooms =" + "'" + txtWashRooms.getText().toString()+"'" + "," +
+										"garage =" + "'" + txtGarage.getText().toString()+"'" + "," +
+										"image = ? where homeid="+homeID +"");
 
-
+						ps.setBinaryStream(1, fin, fin.available());
+						ps.executeUpdate();
+						JOptionPane.showMessageDialog(null,
+								"Home details successfully updates",
+								"Information Message",
+								JOptionPane.INFORMATION_MESSAGE);
+					
+				} catch (SQLException | IOException ex) {
+					ex.printStackTrace();
+				}
+			}
 		});
 		btnUpdate.setBounds(357, 405, 89, 23);
 		contentPane.add(btnUpdate);
 		
-		
+		try {
+			connection = DriverManager
+					.getConnection(
+							"jdbc:oracle:thin:@localhost:1521:orcl",
+							"sysman", "Ekramili6");
+			Statement statement = connection
+					.createStatement();
+			String query = "select * from home where homeid="
+					+ homeID + "";
+			ResultSet resultset = statement
+					.executeQuery(query);
+			if (resultset.next()) {
+				cmbLocation.setSelectedItem(resultset
+						.getString("location"));
+				cmbType.setSelectedItem(resultset
+						.getString("type"));
+				txtSqFeet.setText(resultset
+						.getString("sqfeet"));
+				txtPrice.setText(resultset
+						.getString("price"));
+				txtDescription.setText(resultset
+						.getString("description"));
+				txtBedRooms.setText(resultset
+						.getString("bedrooms"));
+				txtWashRooms.setText(resultset
+						.getString("washrooms"));
+				txtGarage.setText(resultset
+						.getString("garage"));
+				
+				Blob b = resultset.getBlob(10);
+				byte brr[] = new byte[(int) b.length()];
+				brr = b.getBytes(1, (int) b.length());
+				ImageIcon imgIcon = new ImageIcon(brr);
+				Image scaledImage = ((ImageIcon) imgIcon)
+						.getImage();
+				Image resizedImage = scaledImage.getScaledInstance(
+						lblImage.getWidth(),
+						lblImage.getHeight(), 0);
+				lblImage.setIcon(new ImageIcon(
+						resizedImage));
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
 
 		btnClose = new JButton("Close");
 		btnClose.addActionListener(this);
@@ -162,7 +234,24 @@ public class UpdateHouse extends JFrame implements ActionListener{
 		btnLogout.addActionListener(this);
 		btnLogout.setBounds(519, 28, 89, 23);
 		contentPane.add(btnLogout);		
-	}		
+	}
+		
+		public void actionPerformed(ActionEvent arg0) {
+			if (arg0.getSource() == btnUpload) {
+				int returnValue = fc.showOpenDialog(this);
+				if (returnValue == JFileChooser.APPROVE_OPTION) {
+					ImageIcon icon = new ImageIcon(fc.getSelectedFile().getPath());
+					Image img = null;
+					try {
+						img = ImageIO.read(fc.getSelectedFile());
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					Image resizedImage = img.getScaledInstance(lblImage.getWidth(),
+							lblImage.getHeight(), 0);
+					lblImage.setIcon(new ImageIcon(resizedImage));
+				}
+			}
 			if (arg0.getSource() == btnClose) {
 				this.setVisible(false);
 			}
