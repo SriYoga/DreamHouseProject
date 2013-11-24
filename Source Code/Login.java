@@ -17,7 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-// test commit push
+
 public class Login extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
