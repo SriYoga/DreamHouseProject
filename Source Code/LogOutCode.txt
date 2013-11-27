@@ -1,0 +1,86 @@
+//WelcomePage: Add the functionality for log out
+//First added a button for Log out
+		btnNewButton = new JButton("Log out");
+		btnNewButton.addActionListener(this);
+		btnNewButton.setBounds(524, 21, 89, 27);
+		contentPane.add(btnNewButton);
+
+//Second put the function in Action Performed method
+public void actionPerformed(ActionEvent e) 
+{
+	if (e.getSource() == btnNewButton) 
+		{
+		System.gc();
+		for (Window window : Window.getWindows()) 
+		{
+			window.dispose();
+		}
+		Login log = new Login();
+		log.show();
+	}
+}
+
+
+//######################################################################################
+
+
+//UpdateHouse Page: Add a bunch of code in if block to add logout function
+//First added a button for Log out
+		btnLogout = new JButton("Logout");
+		btnLogout.addActionListener(this);
+		btnLogout.setBounds(519, 28, 89, 23);
+		contentPane.add(btnLogout);
+
+//Second put the function in Action Performed method
+if (arg0.getSource() == btnLogout) 
+{
+	System.gc();
+		for (Window window : Window.getWindows()) 
+		{
+			window.dispose();
+		}
+		Login log= new Login();
+		log.show();
+}
+
+
+//######################################################################################
+//SearchResult: Add the functionality for log out
+//First added a button for Log out
+		btnLogout = new JButton("Logout");
+		btnLogout.addActionListener(this);
+		btnLogout.setBounds(747, 12, 89, 23);
+		contentPane.add(btnLogout);
+		JScrollPane scPane = new JScrollPane();
+		scPane.setBounds(613, 106, 334, 87);
+		contentPane.add(scPane);
+
+//Second put the function in Action Performed method
+if (arg0.getSource() == btnLogout) 
+{
+	System.gc();
+	for (Window window : Window.getWindows()) {
+		window.dispose();
+}
+
+
+//######################################################################################
+//AddNewHouse: Add the functionality for log out
+		btnLogout = new JButton("Logout");
+		btnLogout.addActionListener(this);
+		btnLogout.setBounds(618, 31, 89, 23);
+		contentPane.add(btnLogout);
+
+//Second put the function in Action Performed method
+if (e.getSource() == btnLogout) 
+{
+	System.gc();
+	for (Window window : Window.getWindows()) {
+		window.dispose();
+	}
+	Login log= new Login();
+	log.show();
+}
+
+
+//######################################################################################
