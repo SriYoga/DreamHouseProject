@@ -1,0 +1,55 @@
+INSERT INTO "GOWTHAM"."HOME" (LOCATION, TYPE, SQFEET, PRICE, DESCRIPTION, BEDROOMS, WASHROOMS, GARAGE)
+
+
+VALUES 
+('Toronto', 'Apartment', '1700', '250000', 'Close to bus stop and subway, granite top kitchen, close to schools,pharmacy,hospital,easy 401 highway access,shopping malls.', '2', '2', '1'),
+('Toronto', 'Condominiums', '2300', '500000', 'complete access to all community recreational facilities,Garage and home security, 24X7 Monitoring,wide spaced parking lot,party room,Meeting room.', '4', '3', '2'),
+('Toronto', 'Detached House', '1500', '200000', 'Quiet neighbourhood,washer and dryer,CLOSE TO SCHOOLS, PUBLIC TRANSIT, BRAMPTON GO, HWY 410, GROCERY STORES AND RESTAURANTS', '2', '1', '0'),
+('Toronto', 'Semi-detached House', '2000', '300000', 'Well designed house, newly painted. access to all community facilities.', '2', '1', '1'),
+('Toronto', 'Townhouse', '1400', '400000', '4 Bedrooms with 3 wash rooms. Beautiful surrounding near credit river and walk to creek. Near to TTC bus stop, foodbasics.', '4', '3', '2'),
+('Toronto', 'Duplex/Triplex', '2100', '350000', 'Estate sale. Looking for a handyman/renovator for this home in a good neighbourhood. Some big ticket have been done including furnace and roof two years ago, most windows front door and siding. Great value for duplexing or single family. Rear parking for two or three cars, has full gate that opens for this purpose, comes with new hundred amp service to be installed first week in December', '3', '2', '1'),
+
+
+('Missisauga', 'Apartment', '1600', '300000', 'One of finest apartment located in middle of missisauga. Newly furnished apartment.', '3', '2', '1'),
+('Missisauga', 'Condominiums', '2500', '550000', '4 bedrooms with 3 washrooms condominium of 2500 sq.feet located in eastern part of missisauga. Near to 401 highway and pearson international airport.', '4', '3', '2'),
+('Missisauga', 'Detached House', '1800', '250000', 'You will love this house. It is having excellent design of rooms and constructed in 2008. High quality wood is used in construction.', '2', '1', '0'),
+('Missisauga', 'Semi-detached House', '2200', '400000', 'Stainless steel appliances.Main floor library/den. Large bedrooms with ensuite bath.Master washroom with double sink, soaker tub and standing shower', '2', '1', '1'),
+('Missisauga', 'Townhouse', '1600', '450000', '4 bedrooms with 3 washrooms and 2 garage spots. newly painted and newly floored. near to 401 express highway', '4', '3', '2'),
+('Ottawa', 'Semi-detached House', '1700', '400000', 'GET WATERFRONT NOW GREAT PRICE QUICK CLOSING ..... AMAZING WATERFRONT VIEWS OFF YOUR UPPER LEVEL BALCONY... PEACEFUL EASY LIVING AFTER A LONG DAYS WORK. BOATING, FISHING, SWIMMING RIGHT OUT YOUR PATIO DOOR. THIS 3 BEDROOM, 2 BATHROOM OPEN CONCEPT 4 SEASON HOME HAS SPACIOUS ROOMS AND GREAT VIEWS OF LAKE ST. FRANCIS. A PELLET STOVE IN KITCHEN IS USED AS MAIN FORM OF HEAT AND BASEBOARDS AS BACKUP. A GARAGE AND BOAT LIFT WITH DOCK IN CANAL FOR YOU TO ENJOY LIFE ON THE WATER. NICELY LANDSCAPED YARD. HOME IS CLEAN AND MODERNLY DECORATED. WHAT A GREAT PLACE TO LIVE. A MUST SEE.', '3', '2', '1'),
+('Ottawa', 'Townhouse', '1500', '450000', '4 bedrooms with 3 washrroms and 2 garage spots. energy efficeient heating system. .', '4', '3', '2'),
+('Ottawa', 'Duplex/Triplex', '2300', '350000', 'Fabulous 3 +1 bedroom, 3 bathrooms, hardwood flooring, whirlpool bath in master bedroom ensuite, lower level family room with direct access to the  2 car garage, 6 appliances, window coverings.  Rear Sundeck off  kitchen with a ** Hot Tub built into sundeck ** Home built in 2001.  Great Value.  Move-In Condition.
+266 Clifford Campbell , Immediate Possession … Nice Layout for someone wanting an  Inlaw Suite or Duplex for extra income', '4', '3', '2'),
+('Hamilton', 'Apartment', '1400', '250000', 'Beautiful apartment with 2 bedrroms with 1 washrrom having 1 garage is located in middle of hamilton. This apartment having community exercise hall and swimming pool which are open 24hrs a day. ', '2', '1', '1'),
+('Hamilton', 'Condominiums', '2000', '450000', 'Beautifully upgrade model suite unit with all the bells and whistles. Hardwood floors, granite countertops, walls of windows and stainless steel appliances are some of the features in this 4 Bedroom plus Den design of 1350 sq ft.  Thick crown moldings, deep baseboard...even a towel warmer in the ensuite!  This fabulous apartment comes with two underground parking spaces, one locker and even a 9' x 9' storage room.  Ground floor patio and a gazebo for summertime.
+Located in Olde Ancaster, this upscale building an easy walk to shops, banks, and Cora's for breakfast.
+On a tree line street with easy access to highways.', '4', '3', '1'),
+
+('Kingston', 'Condominiums', '2100', '500000', 'Amazing opportunity to own both halves of a semi, with in-law suite potential in both basements! All brick, with spacious units offering 1050 square feet x 4 units for income potential of $4000 per month. Carpet-free. Needs windows but otherwise solid.', '4', '3', '2'),
+('Kingston', 'Detached House', '1700', '210000', 'Prime downtown investment property within easy walking distance of Queens and RMC. This immaculately maintained 5 bedroom house is currently fully leased and grossing $40,980 a year. Included in these numbers are 2 parking spots and coin washer. Recent updates include: new roof with 35 year architectural shingles in 2011, coin washer in 2012, new rear door and improved window insulation in 2013. This is a rare opportunity to own a solid rental downtown at a reasonable price! Minimum 24 hours notice required for all viewings.', '5', '3', '2'),
+('Kingston', 'Semi-detached House', '1500', '350000', 'Great home for 1st time home buyers or as an investment.
+There are 3 bedrooms, bath, living room, kitchen and dining room on upper level. 
+The basement is wide open for your own creation with walkout to the rear yard.
+There was a new roof installed in 2013.', '3', '2', '1'),
+('Oshawa', 'Apartment', '1500', '250000', 'Affordable Home Ownership! Why Rent When You Can Own? Perfect Opportunity For First Time Home Buyers Or Retirees.
+Open Concept Living/Dining Room With Walk Out To Balcony! Many Upgrades Including Kitchen Cabinets, Bathroom, Doors In Kitchen And Hallway! Public Transit Is Just Steps Away, Close To Shopping And Restaurants!', '2', '1', '1'),
+('Oshawa', 'Condominiums', '2500', '500000', 'In This 4 Bedroom Condo That Has It All! Includes Brand New Laminate Flooring, 1 Underground Parking Spot, Ensuite Laundry, Air Conditioning, Natural Gas, Double Wide Storage Unit, Elevator In Building, Secured Entrance, Sliding Door Walkout To Interlocking Patio & More! Walking Distance To Shopping, Church, Library And Public Transit. Downsize Without Making ', '4', '3', '2'),
+('Oshawa', 'Townhouse', '1800', '400000', '4 bedrooms with 3 washrooms and 3 garage spots. Community has swimming pool. ', '4', '3', '3'),
+('Montreal', 'Condominium', '1800', '400000', 'Superb modern style condominium, two steps from the train and all services, in St-Laurent. Downtown Montreal is only 15 minutes away!
+Floating hardwood floors all over the condominium, and dark ceramic in the kitchen and bathroom.
+Spacious glass and ceramic shower and podium bathtub in the bathroom.
+Master bedroom with sliding door, large closet and a lot of space for storage.', '3', '2', '1'),
+('Montreal', 'Detached House', '1800', '300000', 'Magnificent sunny house located in the heart of West Park facing a quiet park.
+Renovated from A to Z, next to highway 40 and 13, train station, near schools, parks, shopping centers, movie theater, medial clinic and CLSC.
+New 200 Amp electric panel.
+New fireplace.
+New central A/C.
+New unistone pavement.', '2', '1', '1'),
+('Montreal', 'Townhouse', '1500', '500000', 'Beautiful townhouse on 2 floors and completely renovated - Available Now!
+
+Excellent investment, best price in the area! Located in a quiet area, close to schools, parks, public transport, hospital, restaurants, shopping centers, etc.
+Features and inclusions:
+- 4 bedrooms
+- 2 bathrooms and 1 shower room
+- Beautiful kitchen with a contemporary look with backsplash
+- Shower bath with ceramic walls and glass doors
+- Fenced backyard ', '4', '3', '2');
