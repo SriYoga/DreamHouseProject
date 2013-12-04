@@ -122,6 +122,42 @@ public class SearchResult extends JFrame implements ActionListener {
 		});
 
 //This is Ekram's Part for Edit a property(END)
+		JButton btnRemove = new JButton("Remove");
+		btnRemove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					if (selectedData != "") {
+						connection = DriverManager.getConnection(
+								"jdbc:oracle:thin:@localhost:1521:orcl",
+								"sysman", "sysman123");
+
+						PreparedStatement ps = connection
+								.prepareStatement("delete from home where homeid ="
+										+ selectedData + "");
+						ps.executeUpdate();
+						JOptionPane.showMessageDialog(null,
+								"Home detail successfully deleted",
+								"Information Message",
+								JOptionPane.INFORMATION_MESSAGE);
+					} else {
+						JOptionPane.showMessageDialog(null,
+								"Please select the item to delete",
+								"Information Message",
+								JOptionPane.INFORMATION_MESSAGE);
+					}
+				} catch (SQLException ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
+		btnRemove.setBounds(342, 412, 110, 23);
+		contentPane.add(btnRemove);
+		
+		if (!user.Role.equals("Admin")) {
+			btnEdit.setEnabled(false);
+			btnRemove.setEnabled(false);
+		}
+
 	}
 	
 	
@@ -250,8 +286,6 @@ public class SearchResult extends JFrame implements ActionListener {
 
 			Login log = new Login();
 			log.show();
-		}
-		
-		
+		}	
 	}
 }
