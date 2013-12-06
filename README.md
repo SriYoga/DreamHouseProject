@@ -1,6 +1,6 @@
 DreamHouseProject
 =================
-For COMP 321
+For COMP 231
 
 
 Problem statement
