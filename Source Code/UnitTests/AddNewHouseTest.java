@@ -38,6 +38,13 @@ public class AddNewHouseTest {
 		System.out.println("Test of adding new house complete");
 	}
 
+	@Test 
+	public void testAddNewHouseConstructor(){
+		UserDetail ud=new UserDetail();
+		AddNewHouse addnew = new AddNewHouse(ud);
+        assertNotNull(addnew);
+
+	}
 	@Test
 	public void testAddNewHouse() {
 		JTextField txtUserName = new JTextField("pei");

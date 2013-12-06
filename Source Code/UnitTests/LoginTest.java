@@ -28,16 +28,21 @@ public class LoginTest {
 	@Before
 	public void setUp() throws Exception {
 		
-				System.out.println("Starting test of the Login default constructor");
+				System.out.println("Starting test of the Login default constructor or other method");
 			}
 
 
 
 	@After
 	public void tearDown() throws Exception {
-		System.out.println("Starting test of the Login default constructor complete");
+		System.out.println(" test of the Login default constructor or other method complete");
 	}
 
+	@Test
+	public void testLoginConstructor(){
+		Login lg=new Login();
+		assertNotNull(lg);
+	}
 	
 	@Test
 	public void testUsernamePwdValid(){
