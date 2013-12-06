@@ -155,7 +155,7 @@ public class AddNewHouse extends JFrame implements ActionListener {
 				try {
 					
 					Random rd=new Random();
-					int homeId=rd.nextInt();
+					int homeId=rd.nextInt(5000);
 					connection = DriverManager.getConnection(
 							"jdbc:oracle:thin:@localhost:1521:VTM", "sys as sysdba",
 							"sysman123");
