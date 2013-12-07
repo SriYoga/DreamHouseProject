@@ -1,7 +1,6 @@
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Window;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -80,7 +79,7 @@ public class WelcomePage extends JFrame implements ActionListener {
 		lblTypeOfHouse.setBounds(36, 240, 89, 16);
 		contentPane.add(lblTypeOfHouse);
 
-		String[] typeStrings = { "All", "Appartment", "Condominiums",
+		String[] typeStrings = { "All", "Apartment", "Condominiums",
 				"Detached House", "Semi-detached House", "Townhouse",
 				"Duplex/Triplex"  };
 		comboBoxType = new JComboBox(typeStrings);
@@ -126,7 +125,7 @@ public class WelcomePage extends JFrame implements ActionListener {
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "sysman",						"Ekramili6");
+					connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "sysman",	"sysman123");
 					Statement statement = connection.createStatement();
 					String query = "select * from Home where " + getPrice()
 							+ getSqFeet() + Location() 
@@ -187,7 +186,22 @@ public class WelcomePage extends JFrame implements ActionListener {
 		cmbSquareFeet.setSelectedIndex(0);
 		cmbSquareFeet.setBounds(132, 207, 153, 27);
 		contentPane.add(cmbSquareFeet);
+		
+		JButton btnAboutUs = new JButton("About Us");
+		btnAboutUs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
 
+				AboutUs aboutus = new AboutUs();				
+				aboutus.show();
+			}
+		});
+		btnAboutUs.setBounds(505, 394, 89, 27);
+		contentPane.add(btnAboutUs);
+		
+				JLabel label = new JLabel("");
+				label.setIcon(new ImageIcon(WelcomePage.class.getResource("/Resources/WelcomePage1.jpg")));
+				label.setBounds(0, 0, 623, 446);
+				contentPane.add(label);
 	}
 
 	private String getPrice() {
@@ -293,30 +307,30 @@ public class WelcomePage extends JFrame implements ActionListener {
 
 	private String houseType()
 	{
-		String[] typeStrings = { "Appartment", "Condominiums", "Detached House", "Semi-detached House", 
+		String[] typeStrings = { "Apartment", "Condominiums", "Detached House", "Semi-detached House", 
 				"Townhouse", "Duplex/Triplex" , "All" };
 		String query = "";
 		
-		if (comboBoxType.getSelectedItem().toString().equals("Appartment")) {
-			query = "and type = 'Appartment'";
+		if (comboBoxType.getSelectedItem().toString().equals("Apartment")) {
+			query = "and type = 'Apartment'";
 		}
 		if (comboBoxType.getSelectedItem().toString().equals("Condominiums")) {
-			query = "and type = 'Appartment'";
+			query = "and type = 'Apartmentment'";
 		}
 		if (comboBoxType.getSelectedItem().toString().equals("Detached House")) {
-			query = "and type = 'Appartment'";
+			query = "and type = 'Apartment'";
 		}
 		if (comboBoxType.getSelectedItem().toString().equals("Semi-detached House")) {
-			query = "and type = 'Appartment'";
+			query = "and type = 'Apartment'";
 		}
 		if (comboBoxType.getSelectedItem().toString().equals("Townhouse")) {
-			query = "and type = 'Appartment'";
+			query = "and type = 'Apartment'";
 		}
 		if (comboBoxType.getSelectedItem().toString().equals("Duplex/Triplex")) {
-			query = "and type = 'Appartment'";
+			query = "and type = 'Apartment'";
 		}		
 		if (comboBoxType.getSelectedItem().toString().equals("All")) {
-			query = "and type IN ('Appartment', 'Condominiums', 'Detached House', 'Semi-detached House', 'Townhouse', 'Duplex/Triplex')";
+			query = "and type IN ('Apartment', 'Condominiums', 'Detached House', 'Semi-detached House', 'Townhouse', 'Duplex/Triplex')";
 		}
 	return query;
 	}
